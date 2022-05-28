@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+	</head>
+	<body>
+ <header th:fragment="header">
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+   <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+         <li class="nav-item">
+         <a class="nav-link" th:href="@{/inicio/menu}">INICIO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/votacion/nueva}">REALIZAR VOTACION</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/votacion/usuarios}">USUARIOS QUE VOTARON</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/votacion/estado}">ESTADO DE VOTACION</a>
+        </li>   
+      </ul>
+     
+    </div> 
+   </div>
+  </nav>
+ </header>		
+		
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>	
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+<meta charset="ISO-8859-1">
+<title>Registro de Usuario</title>
+</head>
+<body>
+<div class="container">
+<div class="row justify-content-center mt-5 pt-5">
+<div class="col-md-5 ">
+ <h2>Registrar nuevo usuario</h2>
+ <form th:action="@{/registrar/Usuario}" th:object="${usuario}" th:method="post"> 
+ <div class="row mb-3">
+    <label for="inputNombre3" class="col-sm-2 col-form-label">Nombre: </label>
+    <div class="col-sm-10">
+      <input type="text" th:field="*{nombre}" class="form-control" id="inputNombre3">
+    </div>
+  </div>
+ <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email: </label>
+    <div class="col-sm-10">
+      <input type="email"  th:field="*{email}" class="form-control" id="inputEmail3">
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="inputFechaNac3" class="col-sm-2 col-form-label">fecha de nacimiento: </label>
+    <div class="col-sm-10">
+      <input type="date" th:field="*{fecha_nac}" class="form-control" id="inputFechaNac3">
+    </div>
+  </div>
+   <button type="submit" class="btn btn-primary">Enviar</button>
+   <a th:href="@{/inicio/menu}" class="btn btn-primary" role="button" data-bs-toggle="button">Cancelar</a>
+ </form> 
+</div>
+</div>
+</div>
+</body>
+</html>
