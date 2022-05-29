@@ -3,9 +3,19 @@ package ar.edu.unju.fi.html.model;
 import java.time.LocalDate;
 import java.time.Period;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.FutureOrPresent;
+import javax.validation.constraints.NotEmpty;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Usuario {
+@NotEmpty(message="No debe estar vacio.")	
 private String nombre;
+@NotEmpty(message="No debe estar vacio.") @Email(message="Debe ser un email.")
 private String email;
+@FutureOrPresent(message="La fecha debe ser actual o futura.") 
+@DateTimeFormat(pattern= "yyyy-MM-dd")
 private LocalDate fecha_nac;
 
 public Usuario() {
