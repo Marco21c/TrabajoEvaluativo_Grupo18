@@ -1,10 +1,18 @@
 package ar.edu.unju.fi.html.model;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Positive;
+
 public class Candidato {
+@Positive(message="Debe ser un valor mayor a 0.")	
 private int codigo;
+@NotEmpty(message="No debe estar vacio.")
 private String nombre;
+@NotEmpty(message="No debe estar vacio.")
 private String genero_music;
+@NotEmpty(message="No debe estar vacio.")
 private String descripcion;
+//este valor no se debe modificar
 private int cant_votos;
 
 public int getCodigo() {
