@@ -12,6 +12,16 @@ public Usuario() {
 	
 }
 
+
+public Usuario(String nombre, String email, LocalDate fecha_nac) {
+	super();
+	this.nombre = nombre;
+	this.email = email;
+	this.fecha_nac = fecha_nac;
+}
+
+
+
 public String getNombre() {
 	return nombre;
 }
