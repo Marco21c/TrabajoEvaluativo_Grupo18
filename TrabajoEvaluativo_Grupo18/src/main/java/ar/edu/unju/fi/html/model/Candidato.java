@@ -15,6 +15,18 @@ private String descripcion;
 //este valor no se debe modificar
 private int cant_votos;
 
+public Candidato(){
+	
+}
+
+public Candidato(int codigo, String nombre, String genero_music, String descripcion, int cant_votos) {
+	super();
+	this.codigo = codigo;
+	this.nombre = nombre;
+	this.genero_music = genero_music;
+	this.descripcion = descripcion;
+	this.cant_votos = cant_votos;
+}
 public int getCodigo() {
 	return codigo;
 }
