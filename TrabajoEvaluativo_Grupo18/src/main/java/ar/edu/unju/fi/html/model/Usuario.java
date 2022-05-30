@@ -6,6 +6,7 @@ import java.time.Period;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Past;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -14,7 +15,7 @@ public class Usuario {
 private String nombre;
 @NotEmpty(message="No debe estar vacio.") @Email(message="Debe ser un email.")
 private String email;
-@FutureOrPresent(message="La fecha debe ser actual o futura.") 
+@Past(message="La fecha debe ser anterior a la actual.") 
 @DateTimeFormat(pattern= "yyyy-MM-dd")
 private LocalDate fecha_nac;
 

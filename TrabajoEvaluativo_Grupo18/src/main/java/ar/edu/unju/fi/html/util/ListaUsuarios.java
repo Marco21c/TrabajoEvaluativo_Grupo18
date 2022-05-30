@@ -1,7 +1,6 @@
 package ar.edu.unju.fi.html.util;
 
 import java.util.ArrayList;
-
 import org.springframework.stereotype.Component;
 
 import ar.edu.unju.fi.html.model.Usuario;
@@ -20,7 +19,7 @@ public class ListaUsuarios {
 
 	public ListaUsuarios() {
 		usuarios = new ArrayList<Usuario>();
-		usuarios.add(new Usuario("pepe", "arg@mail", LocalDate.of(24, 03, 1999)));
+		usuarios.add(new Usuario("pepe", "arg@mail", LocalDate.of(2001, 4, 10)));
 	}
 	
 	

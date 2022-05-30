@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>	
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+<meta charset="ISO-8859-1">
+<title>VOTACION</title>
+</head>
+<body>
+<header th:replace="/layouts/header::header"></header> 
+<h2> Elegir Candidato</h2>
+<div class="container">
+ <div class="row">
+   <div th:each="cand:${candidato}" class="col-3"> 
+      <div>
+        <div class="card" style="width: 18rem;">
+        <img th:src="@{/images/img1.jpg}" class="card-img-top" alt="imagen">
+        <div class="card-body">
+        <h5 th:text="${cand.nombre}" class="card-title"></h5>
+        <p  th:text="${cand.descripcion}"class="card-text"> </p>
+        <a th:href="@{/usuario/guardarvoto?id={id}(id=${cand.codigo})}" class="btn btn-dark">Votar</a>
+  </div>
+</div>
+      </div>
+   </div>
+  </div>
+</div>
+</body>
+</html>

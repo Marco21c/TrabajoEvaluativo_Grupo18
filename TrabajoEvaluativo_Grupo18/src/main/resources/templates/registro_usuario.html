@@ -7,34 +7,35 @@
 <title>Registro de Usuario</title>
 </head>
 <body>
-<div class="container">
+<div class="container color">
 <div class="row justify-content-center mt-5 pt-5">
-<div class="col-md-5 ">
+<div class="col-md-6">
  <h2>REGISTRAR USUARIO</h2>
- <form th:action="@{/registrar/Usuario}" th:object="${usuario}" th:method="post"> 
- <div class="row mb-3">
+ <form th:action="@{/usuario/guardarUsuario}" th:object="${usuario}" method="POST"> 
+ <div class="row mb-5">
     <label for="inputNombre" class="col-sm-2 col-form-label">Nombre: </label>
-    <div class="col-sm-10">
+    <div class="col-sm-8">
       <input type="text" th:field="*{nombre}" class="form-control" id="inputNombre">
       <div class="text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
     </div>
   </div>
- <div class="row mb-3">
+ <div class="row mb-5">
     <label for="inputEmail" class="col-sm-2 col-form-label">Email: </label>
-    <div class="col-sm-10">
+    <div class="col-sm-8">
       <input type="email"  th:field="*{email}" class="form-control" id="inputEmail">
       <div class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
     </div>
   </div>
-  <div class="row mb-3">
+  <div class="row mb-5">
     <label for="inputFechaNac" class="col-sm-2 col-form-label">fecha de nacimiento: </label>
-    <div class="col-sm-10">
+    <div class="col-sm-8">
       <input type="date" th:field="*{fecha_nac}" class="form-control" id="inputFechaNac">
       <div class="text-danger" th:if="${#fields.hasErrors('fecha_nac')}" th:errors="*{fecha_nac}"></div>
     </div>
   </div>
-   <button type="submit" class="btn btn-primary">Enviar</button>
-   <a th:href="@{/inicio/menu}" class="btn btn-primary" role="button" data-bs-toggle="button">Cancelar</a>
+   <button type="submit" class="btn btn-dark ">Enviar</button>
+   <a th:href="@{/inicio/menu}" class="btn btn-dark" role="button" data-bs-toggle="button">Cancelar</a>
+  
  </form> 
 </div>
 </div>
