@@ -2,11 +2,21 @@ package ar.edu.unju.fi.html.util;
 
 import java.util.ArrayList;
 
-import ar.edu.unju.fi.html.model.Candidato;
+import org.springframework.stereotype.Component;
 
+import ar.edu.unju.fi.html.model.Candidato;
+@Component
 public class ListaCandidatos {
 	ArrayList<Candidato> candidatos;
 	
+	public ArrayList<Candidato> getCandidatos() {
+		return candidatos;
+	}
+
+	public void setCandidatos(ArrayList<Candidato> candidatos) {
+		this.candidatos = candidatos;
+	}
+
 	public ListaCandidatos() {
 		candidatos = new ArrayList<Candidato>();
 		candidatos.add(new Candidato(1, "ninguno", "-", "-", 0));
