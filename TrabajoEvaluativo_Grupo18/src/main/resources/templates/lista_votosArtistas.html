@@ -26,8 +26,8 @@
  <td th:text="${c.cant_votos}"></td>
  <td></td>
  <td> 
-  <a th:href="@{/#}" id="editarDocente" type="button" class="btn btn-warning">Editar</a>
-  <a th:href="@{/#}" id="eliminarDocente" type="button" class="btn btn-danger">Eliminar</a>
+  <a th:href="@{/candidato/editar/}+${c.codigo}" id="editarDocente" type="button" class="btn btn-warning">Editar</a>
+  <a th:href="@{/candidato/eliminar/}+${c.codigo}" type="button" class="btn btn-danger">Eliminar</a>
  </td>
  </tr>
 </table>
