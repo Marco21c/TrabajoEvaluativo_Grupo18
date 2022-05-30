@@ -4,7 +4,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import ar.edu.unju.fi.html.model.Candidato;
 import ar.edu.unju.fi.html.service.ICandidatoService;
 import ar.edu.unju.fi.html.util.ListaCandidato;
@@ -60,7 +59,6 @@ public class CandidatoServicelmp implements ICandidatoService {
 		Optional<Candidato> candidato = listaCandidato.getCandidatos().stream().filter(c -> c.getCodigo() == codigo).findFirst();
 		return candidato.get();
 	}
-
    
 
 }

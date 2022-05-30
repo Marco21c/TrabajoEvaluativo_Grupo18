@@ -62,16 +62,22 @@ public class CandidatoController {
 	@GetMapping("/votar")
 	public ModelAndView getListaVotacionPage() {
 		ModelAndView mav = new ModelAndView("votar");
+		
 		mav.addObject("candidato", candidatoService.getListaCandidatos().getCandidatos());
 		return mav;
 }
 	@GetMapping("/guardarvoto")
 	public ModelAndView guardarvoto(@RequestParam(name = "id") int id) {
+		//busqueda del candidato para añadir el voto
+		Candidato cand = candidatoService.buscarCandidato(id);
+		cand.setCant_votos(cand.getCant_votos()+1);
+		 
 		ModelAndView model = new ModelAndView("mensaje");
-		ListaCandidato listC = new ListaCandidato();
-		Optional<Candidato> cand = listC.getCandidatos().stream().filter(c -> id ==c.getCodigo()).findFirst();
-        model.addObject("candidato", cand);  
-		return model;
 		
+			
+		
+		
+		model.addObject("candidato", cand);  
+		return model;
 	}
 }
