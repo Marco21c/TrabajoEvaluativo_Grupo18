@@ -11,4 +11,5 @@ public interface IUsuarioService {
 	public ListaUsuarios getListaUsuarios();
 	public Candidato getCandidato();
 	public ListaCandidato getListaCandidatos();
+	public int calcularEdad(Usuario usuario);
 }

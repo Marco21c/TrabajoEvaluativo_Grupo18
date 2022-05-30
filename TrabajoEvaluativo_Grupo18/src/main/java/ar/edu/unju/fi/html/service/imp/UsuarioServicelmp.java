@@ -44,6 +44,13 @@ public class UsuarioServicelmp implements IUsuarioService {
 		return listaCandidatos;
 	}
 
+	@Override
+	public int calcularEdad(Usuario usuario) {
+		// TODO Auto-generated method stub
+		usuario.setEdad(usuario.calcularEdad(usuario.getFecha_nac()));
+		return usuario.getEdad();
+	}
+
 	
 
 }
