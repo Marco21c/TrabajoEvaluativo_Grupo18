@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>	
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+<meta charset="ISO-8859-1">
+<title>Artistas</title>
+</head>
+<body>
+<header th:replace="/layouts/header::header"></header>
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-10 ">
+<h2> Artistas Destacados</h2>
+<table class="table table-dark table-striped">
+ <tr>
+ <th>Codigo</th>
+ <th> Nombre</th>
+ <th> Votos </th> 
+ <th> Porcentaje </th>
+ </tr>
+ <tr th:each="c:${candidato}">
+ <td th:text="${c.codigo}"></td>
+ <td th:text="${c.nombre}"></td>
+ <td th:text="${c.cant_votos}"></td>
+ </tr>
+</table>
+</div>
+</div>
+</div> 
+</body>
+</html>

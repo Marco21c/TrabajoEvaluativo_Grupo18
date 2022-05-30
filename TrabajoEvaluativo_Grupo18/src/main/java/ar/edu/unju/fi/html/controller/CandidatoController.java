@@ -1,8 +1,9 @@
-/*package ar.edu.unju.fi.html.controller;
+package ar.edu.unju.fi.html.controller;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -23,6 +24,7 @@ import ar.edu.unju.fi.html.service.ICandidatoService;
 public class CandidatoController {
 	
 	@Autowired
+	@Qualifier("CandidatoServiceImp")
 	private ICandidatoService candidatoService;
 	
 	private static final Log LOGGER = LogFactory.getLog(CandidatoController.class);
@@ -30,7 +32,7 @@ public class CandidatoController {
 	@GetMapping("/nuevo")
 	public String GetCandidatoPage(Model model){	
 	model.addAttribute("candidato", candidatoService.getCandidado());
-    return "nuevo_candidato";
+    return "registro_candidatos";
     }
 	
 	@PostMapping("/guardarCandidato")
@@ -47,6 +49,10 @@ public class CandidatoController {
 		
 		return mav;
 	}
-
+	@GetMapping("/listaCandidato")
+	public ModelAndView getListaUsuarioPage() {
+		ModelAndView mav = new ModelAndView("lista_votosArtistas");
+		mav.addObject("candidato", candidatoService.getListaCandidatos().getCandidatos());
+		return mav;
+	}
 }
-*/
