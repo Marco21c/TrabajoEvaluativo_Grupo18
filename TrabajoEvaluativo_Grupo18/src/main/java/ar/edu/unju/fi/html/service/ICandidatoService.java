@@ -1,7 +1,7 @@
 package ar.edu.unju.fi.html.service;
 
 import ar.edu.unju.fi.html.model.Candidato;
-import ar.edu.unju.fi.html.util.ListaCandidatos;
+import ar.edu.unju.fi.html.util.ListaCandidato;
 
 public interface ICandidatoService {
 	
@@ -9,7 +9,7 @@ public interface ICandidatoService {
 	public Boolean guardarCandidato(Candidato candidato);
 	public void modificarCandidato(Candidato candidato);
 	public void eliminarCandidato(int codigo);
-	public ListaCandidatos getListaCandidatos();
+	public ListaCandidato getListaCandidatos();
 	public Candidato buscarCandidato(int codigo);
 
 }

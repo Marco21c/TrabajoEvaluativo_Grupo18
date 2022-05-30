@@ -1,21 +1,26 @@
 package ar.edu.unju.fi.html.service.imp;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import ar.edu.unju.fi.html.model.Candidato;
 import ar.edu.unju.fi.html.service.ICandidatoService;
-import ar.edu.unju.fi.html.util.ListaCandidatos;
+import ar.edu.unju.fi.html.util.ListaCandidato;
 
 public class CandidatoServicelmp implements ICandidatoService {
+	
+	@Autowired
+	private ListaCandidato listacandidatos;
 
 	@Override
 	public Candidato getCandidado() {
 		// TODO Auto-generated method stub
-		return null;
+		return new Candidato();
 	}
 
 	@Override
 	public Boolean guardarCandidato(Candidato candidato) {
 		// TODO Auto-generated method stub
-		return null;
+		return listacandidatos.getCandidatos().add(candidato);
 	}
 
 	@Override
@@ -31,7 +36,7 @@ public class CandidatoServicelmp implements ICandidatoService {
 	}
 
 	@Override
-	public ListaCandidatos getListaCandidatos() {
+	public ListaCandidato getListaCandidatos() {
 		// TODO Auto-generated method stub
 		return null;
 	}
