@@ -26,13 +26,13 @@ import ar.edu.unju.fi.html.util.ListaCandidato;
 
 @Controller
 @RequestMapping("/usuario")
-public class VotarController {
+public class UsuarioController {
 	
 	@Autowired
 	
 	@Qualifier("UsuarioServiceImp")
 	private IUsuarioService usuarioService;
-	private static final Log LOGGER = LogFactory.getLog(VotarController.class);
+	private static final Log LOGGER = LogFactory.getLog(UsuarioController.class);
 	
 	@GetMapping("/nuevo")
 	public String GetUsuarioPage(Model model) {
