@@ -1,35 +1,44 @@
 @charset "ISO-8859-1";
 
-p{
-	color:white;
-}
+
 li{
-	color: rgb(255, 255, 255);
+	color: black;
 	font-size: 19px;
 }
-a{
-	color: white;
-}
-label{
-	color: white;
-}
-tr{
-	color: white;
+
+.centrar{
+	 align-items: center;
+	display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
 h1{
-	color: #ffffff;
-	font-size:50px;
-	font-style:bold;
-	align-items: center;
+	font-size: 100px;
+	font-style: italic;
+	color: #408080;
+	text-shadow: 
+    3px 3px 1px black,
+    5px 5px 2px black,
+    8px 8px 3px black;
+    align-items: center;
 	display: flex;
     justify-content: center;
 }
 body{
-	background-image: url("../images/images.jpg");
+	background-image: url("../images/imagen.jpg");
+	background-size: 1500px 800px;
+	background-repeat: no-repeat;
 }
 h2{
-	font-size: 40px;
-	color: white;
+	font-size: 50px;
+	color: black;
+	text-shadow: 
+    3px 3px 1px black,
+    5px 5px 2px white,
+    8px 8px 3px black;
+    align-items: center;
+	display: flex;
+    justify-content: center;
 }
 footer{
 	font-size:17px;
