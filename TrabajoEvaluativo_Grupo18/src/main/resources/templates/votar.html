@@ -18,7 +18,7 @@
         <div class="card-body">
         <h5 th:text="${cand.nombre}" class="card-title"></h5>
         <p  th:text="${cand.descripcion}"class="card-text"> </p>
-        <a th:href="@{/usuario/guardarvoto?id={id}(id=${cand.codigo})}" class="btn btn-dark">Votar</a>
+        <a th:href="@{/candidato/guardarvoto?id={id}(id=${cand.codigo})}" class="btn btn-dark">Votar</a>
   </div>
 </div>
       </div>

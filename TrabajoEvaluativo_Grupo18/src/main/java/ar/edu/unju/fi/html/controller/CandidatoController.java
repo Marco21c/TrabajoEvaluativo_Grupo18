@@ -1,5 +1,7 @@
 package ar.edu.unju.fi.html.controller;
 
+import java.util.Optional;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,11 +14,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 
 import ar.edu.unju.fi.html.model.Candidato;
 import ar.edu.unju.fi.html.service.ICandidatoService;
+import ar.edu.unju.fi.html.util.ListaCandidato;
 
 @Controller
 @RequestMapping("/candidato")
@@ -54,5 +58,20 @@ public class CandidatoController {
 		ModelAndView mav = new ModelAndView("lista_votosArtistas");
 		mav.addObject("candidato", candidatoService.getListaCandidatos().getCandidatos());
 		return mav;
+	}
+	@GetMapping("/votar")
+	public ModelAndView getListaVotacionPage() {
+		ModelAndView mav = new ModelAndView("votar");
+		mav.addObject("candidato", candidatoService.getListaCandidatos().getCandidatos());
+		return mav;
+}
+	@GetMapping("/guardarvoto")
+	public ModelAndView guardarvoto(@RequestParam(name = "id") int id) {
+		ModelAndView model = new ModelAndView("mensaje");
+		ListaCandidato listC = new ListaCandidato();
+		Optional<Candidato> cand = listC.getCandidatos().stream().filter(c -> id ==c.getCodigo()).findFirst();
+        model.addObject("candidato", cand);  
+		return model;
+		
 	}
 }

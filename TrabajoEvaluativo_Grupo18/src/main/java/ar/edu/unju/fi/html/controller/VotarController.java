@@ -6,7 +6,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,10 +18,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import ar.edu.unju.fi.html.model.Candidato;
 import ar.edu.unju.fi.html.model.Usuario;
+import ar.edu.unju.fi.html.service.ICandidatoService;
 import ar.edu.unju.fi.html.service.IUsuarioService;
 import ar.edu.unju.fi.html.util.ListaCandidato;
-//import ar.edu.unju.fi.html.service.IUsuarioService;
-import ar.edu.unju.fi.html.util.ListaUsuarios;
+
 
 
 @Controller
@@ -30,15 +29,14 @@ import ar.edu.unju.fi.html.util.ListaUsuarios;
 public class VotarController {
 	
 	@Autowired
+	
 	@Qualifier("UsuarioServiceImp")
 	private IUsuarioService usuarioService;
-	 
 	private static final Log LOGGER = LogFactory.getLog(VotarController.class);
 	
 	@GetMapping("/nuevo")
 	public String GetUsuarioPage(Model model) {
 		model.addAttribute("usuario",usuarioService.getUsuario());
-		model.addAttribute("candidato", usuarioService.getCandidato());
 		return "registro_usuario";
 	}
 	
@@ -50,7 +48,7 @@ public class VotarController {
 			mav.addObject("usuario", us);
 			return mav;
 		}
-		ModelAndView mav = new ModelAndView("redirect:/usuario/votar");
+		ModelAndView mav = new ModelAndView("redirect:/candidato/votar");
 		//generar edad
 		us.setEdad(us.calcularEdad(us.getFecha_nac()));
 		
@@ -66,22 +64,4 @@ public class VotarController {
 		return mav;
 	}
 	
-	
-	@GetMapping("/votar")
-	public ModelAndView getListaVotacionPage() {
-		ModelAndView mav = new ModelAndView("votar");
-		ListaCandidato listC = new ListaCandidato();
-		mav.addObject("candidato", listC.getCandidatos());
-		return mav;
-	}
-	
-	@GetMapping("/guardarvoto")
-	public ModelAndView guardarvoto(@RequestParam(name = "id") int id) {
-		ModelAndView model = new ModelAndView("mensaje");
-		ListaCandidato listC = new ListaCandidato();
-		Optional<Candidato> cand = listC.getCandidatos().stream().filter(c -> id ==c.getCodigo()).findFirst();
-        model.addObject("candidato", cand);  
-		return model;
-		
-	}
 }
