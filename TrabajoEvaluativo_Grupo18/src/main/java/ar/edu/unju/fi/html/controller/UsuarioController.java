@@ -49,8 +49,7 @@ public class UsuarioController {
 			return mav;
 		}
 		ModelAndView mav = new ModelAndView("redirect:/candidato/votar");
-		//generar edad
-		//us.setEdad(us.calcularEdad(us.getFecha_nac()));
+		//generar edad;
 		usuarioService.calcularEdad(us);
 		if(usuarioService.guardarUsuario(us)) {
 			LOGGER.info("Se agrego Nuevo usuario");
