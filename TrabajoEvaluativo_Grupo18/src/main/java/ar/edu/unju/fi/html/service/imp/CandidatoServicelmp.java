@@ -61,4 +61,6 @@ public class CandidatoServicelmp implements ICandidatoService {
 		return candidato.get();
 	}
 
+   
+
 }

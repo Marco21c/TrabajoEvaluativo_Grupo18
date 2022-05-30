@@ -18,11 +18,17 @@
  <th> Nombre</th>
  <th> Votos </th> 
  <th> Porcentaje </th>
+ <th> Opciones </th>
  </tr>
  <tr th:each="c:${candidato}">
  <td th:text="${c.codigo}"></td>
  <td th:text="${c.nombre}"></td>
  <td th:text="${c.cant_votos}"></td>
+ <td></td>
+ <td> 
+  <a th:href="@{/#}" id="editarDocente" type="button" class="btn btn-warning">Editar</a>
+  <a th:href="@{/#}" id="eliminarDocente" type="button" class="btn btn-danger">Eliminar</a>
+ </td>
  </tr>
 </table>
 </div>

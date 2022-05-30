@@ -11,5 +11,4 @@ public interface ICandidatoService {
 	public void eliminarCandidato(int codigo);
 	public ListaCandidato getListaCandidatos();
 	public Candidato buscarCandidato(int codigo);
-
 }

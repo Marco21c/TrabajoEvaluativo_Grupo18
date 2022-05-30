@@ -14,18 +14,27 @@ private String genero_music;
 private String descripcion;
 //este valor no se debe modificar
 private int cant_votos;
-
+private int porcentaje;
 public Candidato(){
 	
 }
 
-public Candidato(int codigo, String nombre, String genero_music, String descripcion, int cant_votos) {
+public int getPorcentaje() {
+	return porcentaje;
+}
+
+public void setPorcentaje(int porcentaje) {
+	this.porcentaje = porcentaje;
+}
+
+public Candidato(int codigo, String nombre, String genero_music, String descripcion, int cant_votos,int porcentaje) {
 	super();
 	this.codigo = codigo;
 	this.nombre = nombre;
 	this.genero_music = genero_music;
 	this.descripcion = descripcion;
 	this.cant_votos = cant_votos;
+	this.porcentaje = porcentaje;
 }
 public int getCodigo() {
 	return codigo;
