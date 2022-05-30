@@ -25,7 +25,6 @@ import ar.edu.unju.fi.html.util.ListaCandidato;
 import ar.edu.unju.fi.html.util.ListaUsuarios;
 
 
-
 @Controller
 @RequestMapping("/usuario")
 public class VotarController {
@@ -52,14 +51,24 @@ public class VotarController {
 			return mav;
 		}
 		ModelAndView mav = new ModelAndView("redirect:/usuario/votar");
+		//generar edad
+		us.setEdad(us.calcularEdad(us.getFecha_nac()));
+		
 		if(usuarioService.guardarUsuario(us)) {
-			LOGGER.info("Se agrego Nuevo usuario a la lista");
+			LOGGER.info("Se agrego Nuevo usuario");
 		}
 		return mav;
 	}
+	@GetMapping("/listausuarios")
+	public ModelAndView getListaUsuarioPage() {
+		ModelAndView mav = new ModelAndView("lista_usuarios");
+		mav.addObject("usuario", usuarioService.getListaUsuarios().getUsuarios());
+		return mav;
+	}
+	
 	
 	@GetMapping("/votar")
-	public ModelAndView getListaDocentesPage() {
+	public ModelAndView getListaVotacionPage() {
 		ModelAndView mav = new ModelAndView("votar");
 		ListaCandidato listC = new ListaCandidato();
 		mav.addObject("candidato", listC.getCandidatos());

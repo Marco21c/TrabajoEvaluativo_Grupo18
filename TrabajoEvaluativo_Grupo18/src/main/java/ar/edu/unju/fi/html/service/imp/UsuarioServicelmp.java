@@ -6,13 +6,14 @@ import org.springframework.stereotype.Service;
 import ar.edu.unju.fi.html.model.Candidato;
 import ar.edu.unju.fi.html.model.Usuario;
 import ar.edu.unju.fi.html.service.IUsuarioService;
+import ar.edu.unju.fi.html.util.ListaCandidato;
 import ar.edu.unju.fi.html.util.ListaUsuarios;
 
 @Service("UsuarioServiceImp")
 public class UsuarioServicelmp implements IUsuarioService {
 	@Autowired
 	private ListaUsuarios listaUsuarios;
-
+    private ListaCandidato listaCandidatos;
 	@Override
 	public Usuario getUsuario() {
 		// retorna objeto de la clase Usuario
@@ -36,5 +37,13 @@ public class UsuarioServicelmp implements IUsuarioService {
 		// TODO Auto-generated method stub
 		return new Candidato();
 	}
+
+	@Override
+	public ListaCandidato getListaCandidatos() {
+		// TODO Auto-generated method stub
+		return listaCandidatos;
+	}
+
+	
 
 }

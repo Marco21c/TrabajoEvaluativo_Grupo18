@@ -19,7 +19,7 @@ public class ListaUsuarios {
 
 	public ListaUsuarios() {
 		usuarios = new ArrayList<Usuario>();
-		usuarios.add(new Usuario("pepe", "arg@mail", LocalDate.of(2001, 4, 10)));
+		usuarios.add(new Usuario("pepe", "arg@mail", LocalDate.of(2001, 4, 10),24));
 	}
 	
 	

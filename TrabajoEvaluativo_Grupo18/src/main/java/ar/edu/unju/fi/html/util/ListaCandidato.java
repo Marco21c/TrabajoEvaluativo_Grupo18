@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Component;
 
 import ar.edu.unju.fi.html.model.Candidato;
-//@Component
+@Component
 public class ListaCandidato {
 	ArrayList<Candidato> candidatos;
 	

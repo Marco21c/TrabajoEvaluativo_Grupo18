@@ -18,17 +18,18 @@ private String email;
 @Past(message="La fecha debe ser anterior a la actual.") 
 @DateTimeFormat(pattern= "yyyy-MM-dd")
 private LocalDate fecha_nac;
-
+private int edad;
 public Usuario() {
 	
 }
 
 
-public Usuario(String nombre, String email, LocalDate fecha_nac) {
+public Usuario(String nombre, String email, LocalDate fecha_nac,int edad) {
 	super();
 	this.nombre = nombre;
 	this.email = email;
 	this.fecha_nac = fecha_nac;
+	this.edad = edad;
 }
 
 
@@ -51,6 +52,15 @@ public LocalDate getFecha_nac() {
 public void setFecha_nac(LocalDate fecha_nac) {
 	this.fecha_nac = fecha_nac;
 }
+
+public int getEdad() {
+	return edad;
+}
+public void setEdad(int edad) {
+	this.edad = edad;
+}
+
+
 public int calcularEdad(LocalDate fecha_na) {
 	  Period transcurrido = Period.between(fecha_na,  LocalDate.now());
 	  int edad = transcurrido.getYears(); 
