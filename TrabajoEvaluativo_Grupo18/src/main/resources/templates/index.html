@@ -7,18 +7,37 @@
 		<title>INICIO</title>
   </head>
   <body>
-         <h1 > ARTISTAS DESTACADOS </h1>
-    <div class="centrar">      	    
-        <img height= "400 px" th:src= @{/images/inicio.png} alt="imagen de inicio" title="Titulo">
-    </div>
-     <div class="centrar">
-  	   <div class="btn-group btn-group-lg" role="group" aria-label="Toolbar with button groups">
-  	   <button type="button" class="btn btn-outline-secondary">1safdf</button>
-    <button type="button" class="btn btn-outline-secondary">2dadDa</button>
-    <button type="button" class="btn btn-outline-secondary">3dadDa</button>
-    <button type="button" class="btn btn-outline-secondary">1safdf</button>
-    <button type="button" class="btn btn-outline-secondary">3dadDa</button>
-  	   </div>
-  	   </div>
+   <header th:replace="/layouts/header::header"></header> 
+   <h1 > ARTISTAS  DESTACADOS </h1>
+   <div class="container px-0">
+    <div class="card text-center margen">
+      <div class="card-body">
+       <h5 class="card-title">Elegir un candidato</h5>
+       <p class="card-text">Bienvenido a nuestro sitio web de votacion de artistas destacados. Antes de elegir un candidato debe registrarse.
+       </p>
+       <a href="#" class="btn btn-dark">IR A VOTAR</a>
+      </div>
+    </div>  
+   </div> 
+   <div class="container px-0">
+    <div class="card text-center margen">
+      <div class="card-body">
+       <h5 class="card-title">Resultados Parciales</h5>
+       <p class="card-text">Haciendo click en el link de aqui abajo podra revisar los resultados parciales de la votacion.
+       </p>
+       <a href="#" class="btn btn-dark">VISUALIZAR VOTACIONES</a>
+      </div>
+    </div>  
+   </div> 
+   <div class="container px-0">
+    <div class="card text-center margen">
+      <div class="card-body">
+       <h5 class="card-title">Usuarios que votaron </h5>
+       <p class="card-text">Haciendo click en el link de aqui abajo podra ver los usuarios que ya realizaron la votacion.
+       </p>
+       <a href="#" class="btn btn-dark">VISUALIZAR USUARIOS</a>
+      </div>
+    </div>  
+   </div> 
  </body>
  </html>

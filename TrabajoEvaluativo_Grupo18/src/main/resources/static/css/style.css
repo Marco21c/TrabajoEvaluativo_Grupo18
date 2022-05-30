@@ -6,12 +6,7 @@ li{
 	font-size: 19px;
 }
 
-.centrar{
-	 align-items: center;
-	display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
+
 h1{
 	font-size: 100px;
 	font-style: italic;
@@ -23,6 +18,10 @@ h1{
     align-items: center;
 	display: flex;
     justify-content: center;
+    margin-top: 30px;
+}
+.margen{
+	margin-top: 30px;
 }
 body{
 	background-image: url("../images/imagen.jpg");
@@ -30,7 +29,7 @@ body{
 	background-repeat: no-repeat;
 }
 h2{
-	font-size: 50px;
+	font-size: 30px;
 	color: black;
 	text-shadow: 
     3px 3px 1px black,
