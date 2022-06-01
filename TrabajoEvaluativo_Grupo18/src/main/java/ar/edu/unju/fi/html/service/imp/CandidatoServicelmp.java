@@ -59,6 +59,16 @@ public class CandidatoServicelmp implements ICandidatoService {
 		Optional<Candidato> candidato = listaCandidato.getCandidatos().stream().filter(c -> c.getCodigo() == codigo).findFirst();
 		return candidato.get();
 	}
+
+	@Override
+	public int sumarvotos(ListaCandidato listaCandidato) {
+	int cont=0;	
+		for(Candidato can: listaCandidato.getCandidatos()) {
+		  cont = cont + can.getCant_votos();
+		}
+		// TODO Auto-generated method stub
+		return cont;
+	}
    
 
 }

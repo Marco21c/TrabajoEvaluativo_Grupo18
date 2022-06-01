@@ -53,9 +53,11 @@ public class CandidatoController {
 		return mav;
 	}
 	@GetMapping("/listaCandidato")
-	public ModelAndView getListaUsuarioPage() {
+	public ModelAndView getListaCandidatoPage() {
 		ModelAndView mav = new ModelAndView("lista_votosArtistas");
+		int c = candidatoService.sumarvotos(candidatoService.getListaCandidatos());
 		mav.addObject("candidato", candidatoService.getListaCandidatos().getCandidatos());
+		mav.addObject("cantidad", c);
 		return mav;
 	}
 	@GetMapping("/votar")
@@ -88,7 +90,7 @@ public class CandidatoController {
 	@PostMapping("/modificar")
 	public ModelAndView editarDatosDocente(@Validated @ModelAttribute("candidato") Candidato candidato, BindingResult bindingResult) {
 	if(bindingResult.hasErrors()) {
-		LOGGER.info("ocurrio un error"+candidato);
+		LOGGER.info("ocurrio un error "+candidato);
 		ModelAndView mav = new ModelAndView("edicion_candidato");
 		mav.addObject("candidato", candidato);
 		return mav;
